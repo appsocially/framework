@@ -9,7 +9,7 @@ import { Args } from '../types/common'
 const debug = require('debug')('yaml')
 
 const ajv = new Ajv()
-
+ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 const validate = ajv.compile(schema)
 
 const cache = {}
